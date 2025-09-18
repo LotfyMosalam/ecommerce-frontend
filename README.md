@@ -1,59 +1,70 @@
-# EcommerceFrontend
+# 📌 Frontend — `README.md`
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.1.1.
+```markdown
+# ECommerceDb Frontend
 
-## Development server
+This is the frontend for the **Full Stack E-commerce Assignment**, built with **Angular**.
 
-To start a local development server, run:
+## 🏗️ Project Structure
 
-```bash
-ng serve
-```
+````
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+src/app/
+├─ core/        # services, models, guards, interceptors
+├─ features/
+│    ├─ auth/       # login component
+│    └─ products/   # product list component
+├─ shared/      # shared UI components
+└─ app.routes.ts
 
-## Code scaffolding
+````
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+- **Auth** → Login form, token storage, API integration.
+- **Products** → Product list display, fetching from backend.
+- **Core** → Reusable services (auth service, product service).
+- **Shared** → Common UI components.
 
-```bash
-ng generate component component-name
-```
+## 🚀 Features
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+- **Login** with JWT authentication.
+- **Product list** display.
+- Angular **signals & RxJS** for state management.
+- **HTTP Interceptor** for attaching JWT tokens.
+- Clean, modular structure.
 
-```bash
-ng generate --help
-```
+## 🛠️ Setup Instructions
 
-## Building
+1. Install dependencies:
+   ```bash
+   npm install
+````
 
-To build the project run:
+2. Update backend API URL in `environment.ts`:
 
-```bash
-ng build
-```
+   ```ts
+   export const environment = {
+     apiUrl: 'http://localhost:5000/api'
+   };
+   ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+3. Run the Angular app:
 
-## Running unit tests
+   ```bash
+   ng serve
+   ```
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+4. Navigate to:
 
-```bash
-ng test
-```
+   ```
+   http://localhost:4200
+   ```
 
-## Running end-to-end tests
+## 👤 Test User Credentials
 
-For end-to-end (e2e) testing, run:
+* **Username**: `testuser`
+* **Password**: `P@ssw0rd123`
 
-```bash
-ng e2e
-```
+## ✅ Notes
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+* The login page requires a valid backend running.
+* Product images are fetched from the backend (`http://localhost:5000/images/...`).
